@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8">
+<Biblioteca xmlns:Autor="http://www.w3.org/Autor/" 
+	    xmlns:Ejemplar="http://www.w3.org/Ejemplar/" >
+	<Libro>
+		<Titulo>1984</Titulo>
+		<Publicacion>1949</Publicacion>
+		<ISBN>9788499890944</ISBN>
+		<Autores>
+			<Autor:Autor Nombre="George Orwell" Nacimiento="1903" Nacionalidad="británica"></Autor:Autor>
+		</Autores>
+		<Genero>Ciencia Ficción</Genero>
+		<Ejemplares>
+			<Ejemplar:Ejemplar Numero="1" Estado="Disponible" Adquisicion="1993"></Ejemplar:Ejemplar>
+			<Ejemplar:Ejemplar Numero="2" Estado="Prestado" Adquisición="1998"></Ejemplar:Ejemplar>
+			<Ejemplar:Ejemplar Numero="3" Estado="Disponible" Adquisicion="1988"></Ejemplar:Ejemplar>
+		</Ejemplares>
+	</Libro>
+	<Libro>
+		<Titulo>El hobbit</Titulo>
+		<Publicacion>1937</Publicacion>
+		<ISBN>9788445000656</ISBN>
+		<Autores>
+			<Autor:Autor Nombre="J.R.R. Tolkien" Nacimiento="1892" Nacionalidad="Sudafricana"></Autor:Autor>
+		</Autores>
+		<Genero>Fantasía</Genero>
+		<Ejemplares>
+			<Ejemplar:Ejemplar Numero="1" Estado="Disponible" Adquisicion="1993"></Ejemplar:Ejemplar>
+			<Ejemplar:Ejemplar Numero="2" Estado="Prestado" Adquisición="1998"></Ejemplar:Ejemplar>
+			<Ejemplar:Ejemplar Numero="3" Estado="Prestado" Adquisicion="1988"></Ejemplar:Ejemplar>
+			<Ejemplar:Ejemplar Numero="4" Estado="Prestado" Adquisicion="1995"></Ejemplar:Ejemplar>
+			<Ejemplar:Ejemplar Numero="5" Estado="Prestado" Adquisición="2002"></Ejemplar:Ejemplar>
+			<Ejemplar:Ejemplar Numero="6" Estado="Disponible" Adquisicion="2000"></Ejemplar:Ejemplar>
+			<Ejemplar:Ejemplar Numero="7" Estado="Disponible" Adquisicion="2006"></Ejemplar:Ejemplar>
+		</Ejemplares>
+	</Libro>
+</Biblioteca>

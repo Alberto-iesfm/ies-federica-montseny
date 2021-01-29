@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Edificio xmlns:propietario="www.propietario.org"
+	  xmlns="www.edificio.org">
+	<Direccion>calle Alcala 59</Direccion>
+	<Municipio>Madrid</Municipio>
+	<Apartamentos>
+		<Apartamento>
+			<Planta>1</Planta>
+			<Puerta>C</Puerta>
+			<Propietarios>
+				<propietario:Propietario Nombre="Pedro" Apellidos="Gil Diaz"></propietario:Propietario>
+				<propietario:Propietario Nombre="Marta" Apellidos="Moron Torrijos"></propietario:Propietario>
+				<propietario:Propietario Nombre="Julian" Apellidos="Gil Moron"></propietario:Propietario>
+			</Propietarios>
+		</Apartamento>
+		<Apartamento>
+			<Planta>3</Planta>
+			<Puerta>A</Puerta>
+			<Propietarios>
+				<propietario:Propietario Nombre="Juan" Apellidos="Perez Garcia"></propietario:Propietario>
+				<propietario:Propietario Nombre="Josefa" Apellidos="Garcia Perez"></propietario:Propietario>
+				<propietario:Propietario Nombre="Maria" Apellidos="Hernandez Rodriguez"></propietario:Propietario>
+				<propietario:Propietario Nombre="Jose" Apellidos="Perez Hernandez"></propietario:Propietario>
+				<propietario:Propietario Nombre="Ana" Apellidos="Perez Hernandez"></propietario:Propietario>
+			</Propietarios>
+		</Apartamento>
+	</Apartamentos>
+</Edificio>
