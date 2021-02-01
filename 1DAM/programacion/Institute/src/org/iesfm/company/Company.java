@@ -3,12 +3,14 @@ package org.iesfm.company;
 import java.util.Arrays;
 import java.util.Objects;
 
-public class Company implements ICompany{
+public class Company implements ICompany {
 
     private String name;
     private String cif;
     private Employee[] employees;
     private Department[] departments;
+
+    public static final String DIRECTOR = "director";
 
     public Company(String name, String cif, Employee[] employees, Department[] departments) {
         this.name = name;
@@ -20,15 +22,15 @@ public class Company implements ICompany{
     @Override
     public void printDepartmentNames() {
         System.out.println("La empresa tiene los siguientes departamentos:");
-        for (Department department : departments){
+        for (Department department : departments) {
             System.out.println(department.getName() + ".");
         }
     }
 
-    private Department findDepartment(String depName){
+    private Department findDepartment(String depName) {
         Department depSearched = null;
-        for (Department department : departments){
-            if (department.getName().equals(depName)){
+        for (Department department : departments) {
+            if (department.getName().equals(depName)) {
                 depSearched = department;
             }
         }
@@ -39,7 +41,7 @@ public class Company implements ICompany{
     public Employee[] getDepartmentEmployees(String depName) {
         Employee[] depEmployees = null;
         Department department = findDepartment(depName);
-        if (department != null){
+        if (department != null) {
             depEmployees = department.getEmployees();
         } else {
             System.out.println("¡No existe este departamento!");
@@ -52,7 +54,7 @@ public class Company implements ICompany{
         Employee[] depEmployees = getDepartmentEmployees(depName);
         if (depEmployees != null) {
             System.out.println("Empleados del departamento de " + depName + " :");
-            for (Employee employee : depEmployees){
+            for (Employee employee : depEmployees) {
                 employee.info();
             }
         } else {
@@ -61,9 +63,41 @@ public class Company implements ICompany{
     }
 
     @Override
+    public Employee getDepartmentDirector(String depName) {
+        Employee director = null;
+        Department department = findDepartment(depName);
+        if (department != null) {
+            director = department.getDirector(DIRECTOR);
+        } else {
+            System.out.println("¡No existe el departamento!");
+        }
+        return director;
+    }
+
+    @Override
+    public Employee[] getDepartmentDirectors() {
+        Employee[] directors = new Employee[departments.length];
+        for (Department department : departments) {
+            for (int i = 0; i < departments.length; i++) {
+                directors[i] = department.getDirector(DIRECTOR);
+            }
+        }
+        return directors;
+    }
+
+    @Override
+    public void printDepartmentsDirectors() {
+        System.out.println("Directores:");
+            Employee[] directors = getDepartmentDirectors();
+            for (Employee director : directors){
+                director.info();
+        }
+    }
+
+    @Override
     public void printEmployees() {
         System.out.println("Empleados:");
-        for (Department department : departments){
+        for (Department department : departments) {
             printDepartmentEmployees(department.getName());
         }
     }

@@ -9,6 +9,8 @@ public class Employee {
     private String surnames;
     private String position;
 
+    public static final String ROLE_DIRECTOR = "director";
+
     public Employee(String nif, String name, String surnames, String position) {
         this.nif = nif;
         this.name = name;
