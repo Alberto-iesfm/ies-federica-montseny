@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Empresa xmlns="http://w3.org/empresa"
+	  xmlns:empleado="http://w3.org/empleado">
+	<Nombre>SEAT</Nombre>
+	<CIF>26835402V</CIF>
+	<Sector>Automovilismo</Sector>
+	<Departamentos>
+		<Departamento>
+			<Nombre>Recursos Humanos</Nombre>
+			<Empleados>
+				<empleado:Empleado DNI="47563215Y" Nombre="Juan" Apellidos="Bermudez Soria"></empleado:Empleado>
+				<empleado:Empleado DNI="53654921L" Nombre="Beatriz" Apellidos="Bravo Martin"></empleado:Empleado>
+				<empleado:Empleado DNI="49761354R" Nombre="Ana" Apellidos="Hernando Almeida"></empleado:Empleado>
+			</Empleados>
+		</Departamento>
+		<Departamento>
+			<Nombre>Mecanica</Nombre>
+			<Empleados>
+				<empleado:Empleado DNI="47563125F" Nombre="Julian" Apellidos="Trigueros Cara"></empleado:Empleado>
+				<empleado:Empleado DNI="52984125X" Nombre="Mario" Apellidos="Abad Perez"></empleado:Empleado>
+				<empleado:Empleado DNI="39658147P" Nombre="Pablo" Apellidos="Merino Castillo"></empleado:Empleado>
+				<empleado:Empleado DNI="48632978R" Nombre="Sergio" Apellidos="Perez Gil"></empleado:Empleado>
+				<empleado:Empleado DNI="49056334N" Nombre="Paula" Apellidos="Garcia Rey"></empleado:Empleado>
+			</Empleados>
+		</Departamento>
+	</Departamentos>
+</Empresa>

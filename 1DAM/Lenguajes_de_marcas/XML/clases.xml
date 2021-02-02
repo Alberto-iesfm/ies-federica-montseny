@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Clases xmlns:alumno="http://w3.org/alumno"
+	xmlns:aula="http://w3.org/aula">
+	<aula:Curso>2</aula:Curso>
+	<aula:Letra>C</aula:Letra>
+	<aula:Aula Numero="304">
+	<aula:Alumnos>
+			<alumno:Alumno Nombre="Juan" Apellidos="Perez Diaz" Direccion="calle Burgos 32 2C Leganes"></alumno:Alumno>
+			<alumno:Alumno Nombre="Pedro" Apellidos="Casas Torrijos" Direccion="calle Alcala 57 1A Madrid"></alumno:Alumno>
+			<alumno:Alumno Nombre="Ana" Apellidos="Hernandez Gomez" Direccion="avenida España 15 8B"></alumno:Alumno>
+			<alumno:Alumno Nombre="Ruben" Apellidos="Gonzalez Molina" Direccion="calle Barco 15bis 3A"></alumno:Alumno>
+	</aula:Alumnos>
+	</aula:Aula>
+</Clases>

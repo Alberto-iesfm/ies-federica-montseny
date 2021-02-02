@@ -8,16 +8,20 @@ public class Employee {
     private String name;
     private String surnames;
     private String position;
+    private int cp;
 
-    public Employee(String nif, String name, String surnames, String position) {
+    public static final String ROLE_DIRECTOR = "director";
+
+    public Employee(String nif, String name, String surnames, String position, int cp) {
         this.nif = nif;
         this.name = name;
         this.surnames = surnames;
         this.position = position;
+        this.cp = cp;
     }
 
     public void info(){
-        System.out.println("nombre: " + name + " apellidos: " + surnames + " con nif: " + nif + " y posicion: " + position);
+        System.out.println("nombre: " + name + " apellidos: " + surnames + " con nif: " + nif + " y posicion: " + position + " y codigo postal: " + cp);
     }
 
     public String getNif() {
@@ -52,17 +56,25 @@ public class Employee {
         this.position = position;
     }
 
+    public int getCp() {
+        return cp;
+    }
+
+    public void setCp(int cp) {
+        this.cp = cp;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
-        return Objects.equals(nif, employee.nif) && Objects.equals(name, employee.name) && Objects.equals(surnames, employee.surnames) && Objects.equals(position, employee.position);
+        return cp == employee.cp && Objects.equals(nif, employee.nif) && Objects.equals(name, employee.name) && Objects.equals(surnames, employee.surnames) && Objects.equals(position, employee.position);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nif, name, surnames, position);
+        return Objects.hash(nif, name, surnames, position, cp);
     }
 
     @Override
@@ -72,6 +84,7 @@ public class Employee {
                 ", name='" + name + '\'' +
                 ", surnames='" + surnames + '\'' +
                 ", position='" + position + '\'' +
+                ", cp=" + cp +
                 '}';
     }
 }

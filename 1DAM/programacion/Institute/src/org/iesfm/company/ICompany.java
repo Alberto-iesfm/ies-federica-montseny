@@ -9,4 +9,10 @@ public interface ICompany {
     void printDepartmentEmployees (String depName);
 
     void printEmployees();
+
+    void printDepartmentsDirectors();
+
+    Employee getDepartmentDirector(String depName);
+
+    Employee[] getDepartmentDirectors();
 }

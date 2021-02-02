@@ -13,6 +13,16 @@ public class Department {
         this.employees = employees;
     }
 
+    public Employee getDirector(String position) {
+        Employee director = null;
+        for (Employee result : employees){
+            if (result.getPosition().equals(position)){
+                director = result;
+            }
+        }
+        return director;
+    }
+
     public String getName() {
         return name;
     }
