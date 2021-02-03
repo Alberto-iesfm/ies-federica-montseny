@@ -20,7 +20,7 @@ public class pideArray {
         return numbers;
     }
 
-    static boolean IsvalueinArray(int[] array, int value) {
+    static boolean IsValueInArray(int[] array, int value) {
         boolean found = false;
         for(int arrayNumber: array) {
             if(arrayNumber == value) {
@@ -28,13 +28,6 @@ public class pideArray {
                 break;
             }
         }
-        /*int i = 0;
-        while(!found)
-        {
-            if(array[i] == value)
-            found = true;
-        }*/
-
         return found;
     }
 
@@ -55,7 +48,7 @@ public class pideArray {
 
         for(int h=0; h<numbers1.length;h++) {
             number = numbers1[h];
-            if(isValueInArray(numbers2, number)) {
+            if(IsValueInArray(numbers2, number)) {
                 System.out.println(number);
             }
         }

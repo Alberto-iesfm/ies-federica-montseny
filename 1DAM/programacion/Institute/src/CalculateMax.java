@@ -1,14 +1,15 @@
 public class CalculateMax{
-	public int maximo(int[] maxi){
-
+	public static int maximo(int[] maxi){
+		int maxim = 0;
 		for (int max:maxi){
 
 			
-			while(maxi > max){
+			while(maxim > max){
 
 			return max;
 			}
 		}
+		return maxim;
 	}
 
 	public static void main(String[] args){

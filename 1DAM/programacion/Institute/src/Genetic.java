@@ -4,7 +4,7 @@ public class Genetic {
 
     static Scanner scan = new Scanner(System.in);
 
-    static String converseDNA(String DNA){
+    static void converseDNA(String DNA){
         String DNAc;
         for(int i = 0; i < DNA.length(); i++){
             char base = DNA.charAt(i);
