@@ -46,3 +46,22 @@ ALTER TABLE employees ADD (
 );
 
 ALTER TABLE employees MODIFY boss VARCHAR(20);
+
+CREATE TABLE tasks (
+	id INT NOT NULL,
+    title VARCHAR(255) NOT NULL,
+    start_date DATE,
+    end_date DATE
+);
+
+DESCRIBE tasks;
+
+SHOW CREATE TABLE tasks;
+
+SHOW TABLES;
+
+SHOW INDEXES FROM tasks;
+
+ALTER TABLE tasks
+ADD CONSTRAINT tas_tit_uk
+UNIQUE (title);
