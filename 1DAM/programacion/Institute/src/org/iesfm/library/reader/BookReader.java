@@ -14,13 +14,13 @@ public class BookReader {
         while (number == null || number < 0){
             try{
                 number = scan.nextInt();
-                scan.nextLine();
                 if (number < 0){
                     System.err.println("¡ERROR! El valor no puede ser menor que 0");
                 }
             } catch (InputMismatchException e){
                 System.err.println("¡ERROR! El valor debe ser un numero...");
             }
+            scan.nextLine();
         }
         return number;
     }
@@ -30,6 +30,7 @@ public class BookReader {
         int numGenres = readNumbers();
         String[] genres = new String[numGenres];
         for (int i = 0; i < numGenres; i++) {
+            System.out.println("Indique los generos...");
             genres[i] = scan.nextLine();
         }
         return genres;

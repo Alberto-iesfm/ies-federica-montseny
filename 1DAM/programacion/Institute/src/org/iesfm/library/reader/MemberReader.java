@@ -15,13 +15,13 @@ public class MemberReader {
         while (number == null || number < 0){
             try{
                 number = scan.nextInt();
-                scan.nextLine();
                 if (number < 0){
                     System.err.println("¡ERROR! El valor no puede ser menor que 0");
                 }
             } catch (InputMismatchException e){
                 System.err.println("¡ERROR! El valor debe ser un numero...");
             }
+            scan.nextLine();
         }
         return number;
     }
