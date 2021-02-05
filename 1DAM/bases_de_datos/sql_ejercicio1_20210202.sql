@@ -65,3 +65,31 @@ SHOW INDEXES FROM tasks;
 ALTER TABLE tasks
 ADD CONSTRAINT tas_tit_uk
 UNIQUE (title);
+
+USE test;
+
+DROP TABLE IF EXISTS employees;
+
+CREATE TABLE IF NOT EXISTS employees (
+	id INT AUTO_INCREMENT,
+    name_employee VARCHAR(30),
+    ages INT,
+    PRIMARY KEY (id)
+);
+
+SHOW CREATE TABLE employees;
+
+SHOW INDEXES FROM employees;
+
+DROP INDEX id ON employees;
+
+CREATE INDEX IDX_id ON employees (id);
+
+ALTER TABLE employees
+MODIFY id INT;
+
+ALTER TABLE employees
+MODIFY id INT AUTO_INCREMENT;
+
+ALTER TABLE employees
+ALTER ages SET DEFAULT 0;
