@@ -1,0 +1,33 @@
+
+header {
+	color: #00BF00;
+}
+
+span {
+	color: #606060;
+}
+
+span:hover{
+	color: #00BF00;
+}
+
+nav {
+	background-color: #606060;
+	height: 60px;
+	padding: -10px;
+}
+
+nav a {
+	display: inline-block;
+	background-color: #606060;
+	color: white;
+	height: 40px;
+	padding: 10px;
+	text-decoration: none;
+	font-size: 20px;
+	margin: -5px;
+}
+
+nav a:hover{
+	background-color: #404040;
+}

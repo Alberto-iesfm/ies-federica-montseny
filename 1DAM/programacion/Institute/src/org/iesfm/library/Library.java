@@ -1,5 +1,8 @@
 package org.iesfm.library;
 
+import org.iesfm.library.exceptions.BookNotFoundException;
+import org.iesfm.library.exceptions.MemberNotFoundException;
+
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -19,7 +22,7 @@ public class Library implements ILibrary {
     @Override
     public void infoBooks() {
         System.out.println("Los libros disponibles en la biblioteca son:");
-        for (Book book:books) {
+        for (Book book : books) {
             book.info();
         }
     }
@@ -27,17 +30,36 @@ public class Library implements ILibrary {
     @Override
     public void infoBooks(String askGenre) {
         System.out.println("Los libros disponibles del genero " + askGenre + " son:");
-        for (Book book:books) {
-            if (book.searchByGenre(askGenre)){
+        for (Book book : books) {
+            if (book.searchByGenre(askGenre)) {
                 book.info();
             }
         }
     }
 
+    private Book getBook(int isbn) throws BookNotFoundException{
+        Book result = null;
+        for (Book book:books){
+            if (book.getIsbn() == isbn){
+                result = book;
+            }
+        }
+        if (result == null){
+            throw new BookNotFoundException(isbn);
+        }
+        return result;
+    }
+
+    @Override
+    public void infobook(int isbn) throws BookNotFoundException {
+        Book book = getBook(isbn);
+        book.info();
+    }
+
     @Override
     public void infoMembers() {
         System.out.println("Los miembros de la biblioteca son:");
-        for (Member member:members) {
+        for (Member member : members) {
             member.info();
         }
     }
@@ -45,11 +67,30 @@ public class Library implements ILibrary {
     @Override
     public void infoMembers(int postCode) {
         System.out.println("Los miembros con el codigo postal " + postCode + " son:");
-        for (Member member:members) {
-            if (member.getPostCode() == postCode){
+        for (Member member : members) {
+            if (member.getPostCode() == postCode) {
                 member.info();
             }
         }
+    }
+
+    private Member getMember(String nif) throws MemberNotFoundException {
+        Member result = null;
+        for (Member member : members) {
+            if (member.getNif().equals(nif)) {
+                result = member;
+            }
+        }
+        if (result == null) {
+            throw new MemberNotFoundException(nif);
+        }
+        return result;
+    }
+
+    @Override
+    public void memberInfo(String nif) throws MemberNotFoundException {
+        Member member = getMember(nif);
+        member.info();
     }
 
     @Override
