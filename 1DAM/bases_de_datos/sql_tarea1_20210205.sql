@@ -71,16 +71,16 @@ RENAME TO pub_employees;
 /* ejercicio 3 */
 
 ALTER TABLE pubs ADD (
-	opening_date DATE NOT NULL,
-    timetable VARCHAR(70) NOT NULL
+	opening_date DATE,
+    timetable VARCHAR(70)
 );
 
 ALTER TABLE stocks ADD (
-	price INT NOT NULL
+	price INT
 );
 
 ALTER TABLE cities ADD (
-	province VARCHAR(40) NOT NULL
+	province VARCHAR(40)
 );
 
 ALTER TABLE employees ADD (
@@ -100,3 +100,42 @@ PRIMARY KEY (cod_city);
 ALTER TABLE pub_employees
 ADD CONSTRAINT pubem_cod_dni_func_pk
 PRIMARY KEY (cod_pub, dni_employee, function_employee);
+
+/* ejercicio 5 */
+
+ALTER TABLE pubs
+MODIFY opening_date DATE NOT NULL,
+MODIFY timetable VARCHAR(70) NOT NULL;
+
+ALTER TABLE cities
+MODIFY province VARCHAR(40) NOT NULL;
+
+ALTER TABLE stocks
+ADD CONSTRAINT sto_pri_chk CHECK (price>0);
+
+ALTER TABLE stocks
+ALTER price SET DEFAULT 1;
+
+CREATE INDEX own_idx ON owners (dni_owner, name_owner);
+
+ALTER TABLE stocks
+ALTER amount SET DEFAULT 1;
+
+CREATE INDEX cit_idx ON cities (cod_city, name_city);
+
+/* ejercicio 6 */
+
+ALTER TABLE owners
+DROP INDEX own_idx;
+
+ALTER TABLE stocks
+ALTER amount DROP DEFAULT;
+
+ALTER TABLE cities
+DROP INDEX cit_idx;
+
+ALTER TABLE stocks
+DROP CHECK sto_pri_chk;
+
+ALTER TABLE stocks
+ALTER price DROP DEFAULT;
