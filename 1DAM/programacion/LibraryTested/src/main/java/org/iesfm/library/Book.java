@@ -16,7 +16,7 @@ public class Book {
         this.genres = genres;
     }
 
-    public boolean hasGenre(String askGenre) {
+    public boolean  hasGenre(String askGenre) {
         boolean found = false;
         for (String genre:genres) {
             if (genre.equals(askGenre)){
