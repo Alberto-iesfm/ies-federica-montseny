@@ -139,3 +139,63 @@ DROP CHECK sto_pri_chk;
 
 ALTER TABLE stocks
 ALTER price DROP DEFAULT;
+
+/* ejercicio 7 */
+
+ALTER TABLE owners
+ADD CONSTRAINT cod_pub_onw_fk
+FOREIGN KEY (cod_pub) REFERENCES pubs(cod_pub);
+
+ALTER TABLE pub_employees
+ADD CONSTRAINT cod_pub_pub_emp_fk
+FOREIGN KEY (cod_pub) REFERENCES pubs(cod_pub);
+
+ALTER TABLE pub_employees
+ADD CONSTRAINT dni_emp_pub_emp_fk
+FOREIGN KEY (dni_employee) REFERENCES employees(dni_employee);
+
+ALTER TABLE stocks
+ADD CONSTRAINT cod_pub_sto_fk
+FOREIGN KEY (cod_pub) REFERENCES pubs(cod_pub);
+
+ALTER TABLE pubs
+ADD CONSTRAINT cod_cit_pub_fk
+FOREIGN KEY (cod_city) REFERENCES cities(cod_city);
+
+/* ejercicio 8 */
+
+ALTER TABLE owners
+DROP FOREIGN KEY cod_pub_onw_fk;
+
+ALTER TABLE pub_employees
+DROP FOREIGN KEY cod_pub_pub_emp_fk;
+
+ALTER TABLE pub_employees
+DROP FOREIGN KEY dni_emp_pub_emp_fk;
+
+ALTER TABLE stocks
+DROP FOREIGN KEY cod_pub_sto_fk;
+
+ALTER TABLE pubs
+DROP FOREIGN KEY cod_cit_pub_fk;
+
+/* ejercicio 9 */
+
+DROP TABLE owners;
+
+CREATE TABLE owners (
+	dni_owner VARCHAR(9) NOT NULL,
+    name_owner VARCHAR(40) NOT NULL,
+    adress VARCHAR(50),
+    cod_pub INT NOT NULL,
+    PRIMARY KEY (dni_owner),
+    CONSTRAINT cod_pub_onw_fk
+    FOREIGN KEY (cod_pub) 
+    REFERENCES pubs(cod_pub)
+		ON UPDATE CASCADE
+        ON DELETE CASCADE
+);
+
+DROP TABLE pubs;
+
+CREATE TABLE pubs

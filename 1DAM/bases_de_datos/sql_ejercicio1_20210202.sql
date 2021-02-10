@@ -93,3 +93,44 @@ MODIFY id INT AUTO_INCREMENT;
 
 ALTER TABLE employees
 ALTER ages SET DEFAULT 0;
+
+/* foreign key*/
+
+DROP TABLE IF EXISTS employees;
+
+CREATE TABLE IF NOT EXISTS employees (
+	id_employee INT not null auto_increment PRIMARY KEY,
+	nombre VARCHAR(30) NOT NULL,
+	edad int
+);
+
+DROP TABLE tasks;CREATE TABLE tasks (
+	id int NOT NULL PRIMARY KEY,
+	title varchar(255) NOT NULL,
+	start_date date DEFAULT NULL,
+	end_date date DEFAULT NULL,
+	price int DEFAULT NULL,
+	id_employee int DEFAULT NULL,
+	/*CONSTRAINT FK_employees_tasks*/
+	FOREIGN KEY (id_employee)
+	REFERENCES employees(id_employee)
+);
+
+SHOW CREATE TABLE employees;
+
+SHOW CREATE TABLE tasks;
+
+ALTER TABLE tasks
+ADD CONSTRAINT FK_employees_tasks
+FOREIGN KEY (id_employee)
+REFERENCES employees(id_employee);
+
+ALTER TABLE tasks
+DROP FOREIGN KEY FK_employees_tasks;
+
+ALTER TABLE tasks
+ADD foreign key (id_employee) 
+REFERENCES employees(id_employee);
+
+ALTER TABLE tasks
+DROP FOREIGN KEY tasks_ibfk_1;
