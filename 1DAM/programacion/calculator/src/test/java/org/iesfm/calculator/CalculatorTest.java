@@ -73,5 +73,7 @@ public class CalculatorTest {
     public void DivisionBy0() {
         double a = 2;
         double b = 0;
+
+        double res
     }
 }
