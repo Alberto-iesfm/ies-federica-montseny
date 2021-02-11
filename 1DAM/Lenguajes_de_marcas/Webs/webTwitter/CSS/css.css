@@ -1,0 +1,57 @@
+div {
+	max-width: 1350px;
+	margin: auto;
+	display: grid;
+	grid-template-columns: 25% 50% 25%;
+}
+
+nav {
+	grid-row-start: 1;
+	grid-row-end: 4;
+}
+
+main {
+	grid-row-start: 3;
+}
+
+li {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+	display: inline-block;
+	height: 30px;
+	border-radius: 50px;
+	padding: 10px;
+}
+
+a.tweetear {
+	background-color: #00ACEE;
+	text-align: center;
+	color: white;
+	width: 200px;
+}
+
+.profile {
+	width: 70px;
+	height: 70px;
+	border-radius: 100%;
+	float: left;
+	clear: right;
+}
+
+.icon {
+	width: 40px;
+	height: 40px;
+	float: left;
+}
+
+.tweet {
+	display: inline-block;
+	width: 400px;
+}
+
+.tweet_img {
+	border-radius: 10px;
+}
