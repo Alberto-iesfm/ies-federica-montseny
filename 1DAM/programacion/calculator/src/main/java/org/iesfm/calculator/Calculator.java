@@ -14,16 +14,16 @@ public class Calculator implements ICalculator {
 
     @Override
     public double division(double a, double b) {
-        return 0;
+        return a / b;
     }
 
     @Override
     public double multiply(double a, double b) {
-        return 0;
+        return a * b;
     }
 
     @Override
     public double neg(double a) {
-        return 0;
+        return -a;
     }
 }

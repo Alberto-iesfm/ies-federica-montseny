@@ -50,7 +50,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void DivisionTest() {
+    public void divisionTest() {
         double a = 2;
         double b = 5;
 
@@ -60,7 +60,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void DivisionNegativeAndPositive() {
+    public void divisionNegativeAndPositive() {
         double a = 2;
         double b = -5;
 
@@ -70,10 +70,81 @@ public class CalculatorTest {
     }
 
     @Test
-    public void DivisionBy0() {
+    public void divisionBy0Test() {
         double a = 2;
         double b = 0;
 
-        double res
+        double res = calculator.division(a, b);
+
+        Assert.assertTrue(Double.isInfinite(res));
+
+    }
+
+    @Test
+    public void division0By0Test() {
+        double a = 0;
+        double b = 0;
+
+        double res = calculator.division(a, b);
+
+        Assert.assertTrue(Double.isNaN(res));
+    }
+
+    @Test
+    public void multiplyTest() {
+        double a = 2;
+        double b = 5;
+
+        double res = calculator.multiply(a, b);
+
+        Assert.assertEquals(10, res, DELTA);
+    }
+
+    @Test
+    public void multiplyNegativeTest() {
+        double a = -2;
+        double b = 5;
+
+        double res = calculator.multiply(a, b);
+
+        Assert.assertEquals(-10, res, DELTA);
+    }
+
+    @Test
+    public void multiplyNegativeByNegative() {
+        double a = -2;
+        double b = -5;
+
+        double res = calculator.multiply(a, b);
+
+        Assert.assertEquals(10, res, DELTA);
+    }
+
+    @Test
+    public void multiplyBy0() {
+        double a = 2;
+        double b = 0;
+
+        double res = calculator.multiply(a, b);
+
+        Assert.assertEquals(0, res, DELTA);
+    }
+
+    @Test
+    public void negTest() {
+        double a = 2;
+
+        double res = calculator.neg(a);
+
+        Assert.assertEquals(-2, res, DELTA);
+    }
+
+    @Test
+    public void negNegativeTest() {
+        double a = -2;
+
+        double res = calculator.neg(a);
+
+        Assert.assertEquals(2, res, DELTA);
     }
 }
