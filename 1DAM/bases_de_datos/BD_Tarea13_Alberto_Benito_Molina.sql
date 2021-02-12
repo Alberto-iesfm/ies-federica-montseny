@@ -26,7 +26,7 @@ CREATE TABLE games (
 
 CREATE TABLE publishers (
 	id INT AUTO_INCREMENT NOT NULL,
-    publisher_name VARCHAR(40),
+    publisher_name VARCHAR(40) NOT NULL,
     PRIMARY KEY (id)
 );
 
@@ -49,7 +49,7 @@ CREATE TABLE games_publishers (
 
 CREATE TABLE platforms (
 	id INT AUTO_INCREMENT NOT NULL,
-    platform_name VARCHAR(20),
+    platform_name VARCHAR(20) NOT NULL,
     PRIMARY KEY (id)
 );
 
@@ -93,6 +93,10 @@ ALTER TABLE regions_sales
 ADD CONSTRAINT PK_reg_id_ga_plat_id_reg_sal
 PRIMARY KEY (region_id, game_platform_id),
 ADD CONSTRAINT FK_id_reg_reg_sal
-FOREIGN KEY (region_id) REFERENCES regions(id),
+FOREIGN KEY (region_id) REFERENCES regions(id)
+	ON UPDATE CASCADE
+    ON DELETE CASCADE,
 ADD CONSTRAINT FK_id_ga_plat_reg_sal
-FOREIGN KEY (game_platform_id) REFERENCES games_platforms(id);
+FOREIGN KEY (game_platform_id) REFERENCES games_platforms(id)
+ON UPDATE CASCADE
+ON DELETE CASCADE;
