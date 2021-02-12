@@ -26,12 +26,18 @@ a {
 	padding: 10px;
 }
 
+a:hover {
+        background-color: silver;
+
 a.tweetear {
 	background-color: #00ACEE;
 	text-align: center;
 	color: white;
 	width: 200px;
 }
+
+a.tweetear:hover {
+        background-color: #008CBB;
 
 .profile {
 	width: 70px;
