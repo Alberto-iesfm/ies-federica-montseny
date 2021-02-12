@@ -1,5 +1,6 @@
 package org.iesfm.calculator;
 
+import org.iesfm.calculator.exceptions.NegativeNumException;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -146,5 +147,29 @@ public class CalculatorTest {
         double res = calculator.neg(a);
 
         Assert.assertEquals(2, res, DELTA);
+    }
+
+    @Test
+    public void factorialTest() {
+        int a = 3;
+
+        try {
+            int res = calculator.factorial(a);
+            Assert.assertEquals(6, res);
+        } catch (NegativeNumException e) {
+            Assert.fail("No deberia dar una excepcion ya que no hay negativos");
+        }
+    }
+
+    @Test
+    public void factorialNegativeTest() {
+        int a = -3;
+
+        try {
+            int res = calculator.factorial(a);
+            Assert.fail("Deberia dar una excepcion ya que hay negativos");
+        } catch (NegativeNumException e){
+
+        }
     }
 }
