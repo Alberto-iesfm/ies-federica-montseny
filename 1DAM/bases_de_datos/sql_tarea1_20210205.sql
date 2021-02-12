@@ -1,6 +1,6 @@
 /* creacion de la base de datos */
 
-CREATE DATABASE gestio_pub;
+CREATE DATABASE gestion_pub;
 
 /* ejercicio 1 */
 
@@ -24,26 +24,26 @@ CREATE TABLE IF NOT EXISTS owner_pub (
 );
 
 CREATE TABLE IF NOT EXISTS employee (
-	dni_employee VARCHAR(9) NOT NULL AUTO_INCREMENT,
+	dni_employee VARCHAR(9) NOT NULL,
     name_employee VARCHAR(40) NOT NULL,
     adress VARCHAR(50),
     PRIMARY KEY (dni_employee)
 );
 
 CREATE TABLE IF NOT EXISTS stock (
-	cod_article INT NOT NULL AUTO_INCREMENT,
+	cod_article INT NOT NULL,
     name_article VARCHAR(40) NOT NULL,
     amount INT NOT NULL,
     cod_pub INT NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS city (
-	cod_city INT NOT NULL AUTO_INCREMENT,
+	cod_city INT NOT NULL,
     name_city VARCHAR(40) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS pub_employee (
-	cod_pub INT NOT NULL AUTO_INCREMENT,
+	cod_pub INT NOT NULL,
     dni_employee VARCHAR(9) NOT NULL,
     function_employee VARCHAR (30) NOT NULL
 );
@@ -143,43 +143,59 @@ ALTER price DROP DEFAULT;
 /* ejercicio 7 */
 
 ALTER TABLE owners
-ADD CONSTRAINT cod_pub_onw_fk
+ADD CONSTRAINT FK_cod_pub_onw
 FOREIGN KEY (cod_pub) REFERENCES pubs(cod_pub);
 
 ALTER TABLE pub_employees
-ADD CONSTRAINT cod_pub_pub_emp_fk
+ADD CONSTRAINT FK_cod_pub_pub_emp
 FOREIGN KEY (cod_pub) REFERENCES pubs(cod_pub);
 
 ALTER TABLE pub_employees
-ADD CONSTRAINT dni_emp_pub_emp_fk
+ADD CONSTRAINT FK_dni_emp_pub_emp
 FOREIGN KEY (dni_employee) REFERENCES employees(dni_employee);
 
 ALTER TABLE stocks
-ADD CONSTRAINT cod_pub_sto_fk
+ADD CONSTRAINT FK_cod_pub_sto
 FOREIGN KEY (cod_pub) REFERENCES pubs(cod_pub);
 
 ALTER TABLE pubs
-ADD CONSTRAINT cod_cit_pub_fk
+ADD CONSTRAINT FK_cod_cit_pub
 FOREIGN KEY (cod_city) REFERENCES cities(cod_city);
 
 /* ejercicio 8 */
 
 ALTER TABLE owners
-DROP FOREIGN KEY cod_pub_onw_fk;
+DROP FOREIGN KEY FK_cod_pub_onw;
 
 ALTER TABLE pub_employees
-DROP FOREIGN KEY cod_pub_pub_emp_fk;
+DROP FOREIGN KEY FK_cod_pub_pub_emp;
 
 ALTER TABLE pub_employees
-DROP FOREIGN KEY dni_emp_pub_emp_fk;
+DROP FOREIGN KEY FK_dni_emp_pub_emp;
 
 ALTER TABLE stocks
-DROP FOREIGN KEY cod_pub_sto_fk;
+DROP FOREIGN KEY FK_cod_pub_sto;
 
 ALTER TABLE pubs
-DROP FOREIGN KEY cod_cit_pub_fk;
+DROP FOREIGN KEY FK_cod_cit_pub;
 
 /* ejercicio 9 */
+
+DROP TABLE pubs;
+
+CREATE TABLE pubs (
+	cod_pub INT AUTO_INCREMENT NOT NULL,
+	name_pub VARCHAR(40) NOT NULL,
+    tax_license VARCHAR (30) NOT NULL,
+	adress VARCHAR (50),
+    cod_city INT NOT NULL,
+    PRIMARY KEY (cod_pub),
+    CONSTRAINT FK_cod_cit_pub
+	FOREIGN KEY (cod_city)
+    REFERENCES cities(cod_city)
+		ON UPDATE CASCADE
+        ON DELETE CASCADE
+);
 
 DROP TABLE owners;
 
@@ -189,13 +205,29 @@ CREATE TABLE owners (
     adress VARCHAR(50),
     cod_pub INT NOT NULL,
     PRIMARY KEY (dni_owner),
-    CONSTRAINT cod_pub_onw_fk
+    CONSTRAINT FK_cod_pub_onw
     FOREIGN KEY (cod_pub) 
     REFERENCES pubs(cod_pub)
 		ON UPDATE CASCADE
         ON DELETE CASCADE
 );
 
-DROP TABLE pubs;
+DROP TABLE pub_employees;
 
-CREATE TABLE pubs
+CREATE TABLE pub_employees (
+	cod_pub INT NOT NULL AUTO_INCREMENT,
+    dni_employee VARCHAR(9) NOT NULL,
+    function_employee VARCHAR (30) NOT NULL,
+    PRIMARY KEY (cod_pub, dni_employee, function_employee),
+    CONSTRAINT cod_pub_pub_emp_fk
+    FOREIGN KEY (cod_pub)
+    REFERENCES pubs(cod_pub)
+		ON UPDATE CASCADE
+        ON DELETE CASCADE,
+	CONSTRAINT FK_dni_emp_pub_emp
+    FOREIGN KEY (dni_employee)
+    REFERENCES employees(dni_employee)
+		ON UPDATE CASCADE
+        ON DELETE CASCADE
+);
+	
