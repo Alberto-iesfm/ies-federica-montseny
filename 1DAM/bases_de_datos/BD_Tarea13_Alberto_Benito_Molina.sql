@@ -100,3 +100,31 @@ ADD CONSTRAINT FK_id_ga_plat_reg_sal
 FOREIGN KEY (game_platform_id) REFERENCES games_platforms(id)
 ON UPDATE CASCADE
 ON DELETE CASCADE;
+
+/* creacion de indices */
+
+CREATE INDEX idx_gen ON genres(id);
+
+CREATE INDEX idx_pub ON publishers(id);
+
+CREATE INDEX idx_ga ON games(id, genre_id);
+
+CREATE INDEX idx_ga_pub ON games_publishers(id, game_id, publisher_id);
+
+CREATE INDEX idx_plat ON platforms(id);
+
+CREATE INDEX idx_ga_plat ON games_platforms(id, game_publisher_id, platform_id);
+
+CREATE INDEX idx_reg ON regions(id);
+
+CREATE INDEX idx_reg_sal ON regions_sales(region_id, game_platform_id);
+
+/* creacion de restricciones */
+
+ALTER TABLE regions
+ADD CONSTRAINT uk_reg_na
+UNIQUE(region_name);
+
+ALTER TABLE publishers
+ADD CONSTRAINT uk_pub_na
+UNIQUE(publisher_name);
