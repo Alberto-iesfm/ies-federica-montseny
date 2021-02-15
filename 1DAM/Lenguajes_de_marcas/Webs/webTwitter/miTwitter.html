@@ -6,7 +6,11 @@
 </head>
 <body>
 	<div>
-		<header><h1>HOME</h1></header>
+		<header>
+			<div class="header">
+				<h1>HOME</h1>
+			</div>
+		</header>
 		<nav>
 			<ul>
 				<li><a href=""><img class="icon" src="images/twitter.jpg"></a></li>
@@ -22,14 +26,16 @@
 			</ul>
 		</nav>
 		<form>
-			<input type="submit" value="search">
-			<input type="text" name="search">
+			<div class="search">
+				<input class="searchbutton" type="submit" value="search">
+				<input class="text" type="text" name="search">
+			</div>
 		</form>
 		<section>
 			<form>
 				<img class="profile" src="images/yo.jpg">
-				<input type="text" name="tweet">
-				<input type="submit" value="Tweet">
+				<input class="tweetear" type="text" name="tweet">
+				<input class="button" type="submit" value="Tweet">
 			</form>
 		</section>
 		<main>
@@ -56,35 +62,35 @@
 				</div>
 			</article>
 		</main>
-		<aside>
+		<aside class="happening">
 			<h2>What's happening</h2>
 			<article>
 				<p class="grey">Footbal · trending</p>
 				<p><b>Tigres</b></p>
-				<p class="grey">111k tweets</p>
+				<p class="grey" class="bottom">111k tweets</p>
 			</article>
 			<article>
 				<p class="grey">Trending in Spain</p>
 				<p><b>Eduardo Inda</b></p>
-				<p class="grey">17.9k tweets</p>
+				<p class="grey" class="bottom">17.9k tweets</p>
 			</article>
 			<article>
 				<p class="grey">Trending in Spain</p>
 				<p><b>Copa del rey</b></p>
-				<p class="grey">29k tweets</p>
+				<p class="grey" class="botTom">29k tweets</p>
 			</article>
 		</aside>
-		<aside>
+		<aside id="follow">
 			<h2>Who to follow</h2>
 			<article>
 				<img class="profile" src="images/Husky.jpeg">
-				<p><b>mundo_husky</b></p>
+				<p class="underline"><b>mundo_husky</b></p>
 				<p class="grey">@mun_hus2</p>
 				<a href="">Follow</a>
 			</article>
 			<article>
 				<img class="profile" src="images/Salteado.jpg">
-				<p><b>comilones</b></p>
+				<p class="underline"><b>comilones</b></p>
 				<p class="grey">@comilon24</p>
 				<a href="">Follow</a>
 			</article>
