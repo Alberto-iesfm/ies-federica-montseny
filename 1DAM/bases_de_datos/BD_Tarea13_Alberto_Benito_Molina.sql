@@ -128,3 +128,33 @@ UNIQUE(region_name);
 ALTER TABLE publishers
 ADD CONSTRAINT uk_pub_na
 UNIQUE(publisher_name);
+
+ALTER TABLE regions_sales
+ALTER num_sales SET DEFAULT 0;
+
+ALTER TABLE games_platforms
+ALTER release_year SET DEFAULT 1989;
+
+ALTER TABLE regions_sales
+ADD CONSTRAINT chk_num_reg_sal CHECK (num_sales>=0);
+
+ALTER TABLE games_platforms
+ADD CONSTRAINT chk_year_ga_plat CHECK (release_year>=1989);
+
+/* eliminar constraints */
+
+DROP INDEX uk_reg_na ON regions;
+
+DROP INDEX uk_pub_na ON publishers;
+
+ALTER TABLE regions_sales
+ALTER num_sales DROP DEFAULT;
+
+ALTER TABLE games_platforms
+ALTER release_year DROP DEFAULT;
+
+ALTER TABLE regions_sales
+DROP CHECK chk_num_reg_sal;
+
+ALTER TABLE games_platforms
+DROP CHECK chk_year_ga_plat;
