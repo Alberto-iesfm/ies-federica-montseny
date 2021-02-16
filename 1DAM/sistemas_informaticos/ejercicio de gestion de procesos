@@ -1,0 +1,9 @@
+  670  ps aux | grep 'PID\|yes'
+  671  ps axjf | grep 'PID\|yes'
+  672  ps axjf
+  673  ps axjf | grep yes
+  674  ps -U alberto u
+  675  ps aux | grep 'PID\sublime'
+  676  ps aux | grep 'PID\|sublime'
+  677  ps -ef | grep 'PID\|sublime'
+  

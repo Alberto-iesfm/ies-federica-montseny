@@ -237,6 +237,10 @@ img.icon{
 	margin-top: 0px;
 }
 
+.current {
+	color: #00ACEE;
+}
+
 .profile {
 	width: 70px;
 	height: 70px;
