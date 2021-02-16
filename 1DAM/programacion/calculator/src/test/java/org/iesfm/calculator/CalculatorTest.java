@@ -70,15 +70,12 @@ public class CalculatorTest {
         Assert.assertEquals(-0.4, res, DELTA);
     }
 
-    @Test
-    public void divisionBy0Test() {
+    @Test (expected = ArithmeticException.class)
+    public void divisionBy0Test() throws ArithmeticException{
         double a = 2;
         double b = 0;
 
-        double res = calculator.division(a, b);
-
-        Assert.assertTrue(Double.isInfinite(res));
-
+        calculator.division(a, b);
     }
 
     @Test
