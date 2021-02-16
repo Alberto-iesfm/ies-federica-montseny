@@ -1,11 +1,15 @@
 package org.iesfm.calculator;
 
 import org.iesfm.calculator.exceptions.NegativeNumException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Calculator implements ICalculator {
+    private Logger log = LoggerFactory.getLogger(Calculator.class);
 
     @Override
     public double sum(double a, double b) {
+        log.info("A sum has been executed: " + a + " + " + b);
         return a + b;
     }
 
@@ -16,7 +20,11 @@ public class Calculator implements ICalculator {
 
     @Override
     public double division(double a, double b) {
-        return a / b;
+        if (b == 0){
+            throw new ArithmeticException("Can't divide by 0");
+        } else {
+            return a / b;
+        }
     }
 
     @Override
