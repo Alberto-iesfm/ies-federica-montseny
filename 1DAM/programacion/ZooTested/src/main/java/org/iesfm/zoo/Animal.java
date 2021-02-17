@@ -2,6 +2,14 @@ package org.iesfm.zoo;
 
 import java.util.Objects;
 
+
+/** contiene la informacion de los animales que se encuentran en el zoo, dicha informacion esta compuesta de:
+ * <ul>
+ *     <li>nombre de la especie del animal (String).</li>
+ *     <li>tipo de alimentacion del animal (hervivoro, omnivoro o carnivoro) (String).</li>
+ *     <li>numero de la jaula en la que se encuentra el animal (int).</li>
+ * </ul>
+ */
 public class Animal {
     private String species;
     private String feeding;
