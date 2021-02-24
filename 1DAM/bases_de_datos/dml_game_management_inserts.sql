@@ -98,3 +98,19 @@ INSERT INTO games_platforms (game_publisher_id, platform_id, release_year)
 VALUES
 	(1, 6, 2020),
     (2, 2, 2020);
+    
+/* selects */
+
+SELECT * FROM genres;
+
+SELECT * FROM platforms;
+
+SELECT * FROM publishers;
+
+SELECT * FROM regions;
+
+SELECT * FROM games;
+
+SELECT * FROM games_publishers;
+
+SELECT * FROM games_platforms;
