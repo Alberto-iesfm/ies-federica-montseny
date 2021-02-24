@@ -39,3 +39,23 @@ public class TicTacToeTest {
                 game.putX(3, 4);
     }
 }
+// tablero TicTacToe
+// for (int i = 0; i < board.length; i++) {
+//    if(i == 0) {
+//        System.out.println("|̄ ̄ ̄ |̄ ̄ ̄ |̄ ̄ ̄ |");
+//    } else{
+//        System.out.println("|   |   |   |");
+//    }
+//    Character[] row = board[i];
+//    for (int j = 0; j < row.length; j++) {
+//        if (row[j] == null) {
+//            System.out.print("|   ");
+//        } else if (row[j] == 'X') {
+//            System.out.print("| X ");
+//        } else {
+//            System.out.print("| O ");
+//        }
+//    }
+//    System.out.println("|");
+//    System.out.println("|___|___|___|");
+//}
