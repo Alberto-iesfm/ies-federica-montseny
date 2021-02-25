@@ -1,4 +1,4 @@
-package org.iesf.ticTacToe;
+package org.iesfm.ticTacToe;
 
 import org.iesfm.ticTacToe.TicTacToe;
 import org.iesfm.ticTacToe.exceptions.InvalidPositionException;
