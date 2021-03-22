@@ -86,13 +86,7 @@ public class Store implements IStore{
 
     @Override
     public boolean existDisk(String title) {
-        boolean diskExists = false;
-        for (Disk disk: disks.values()){
-            if (disk.getTitle().equals(title)){
-                diskExists = true;
-            }
-        }
-        return diskExists;
+        return disks.containsKey(title);
     }
 
     @Override
