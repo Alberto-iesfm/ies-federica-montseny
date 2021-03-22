@@ -1,8 +1,6 @@
 package org.iesfm.discos;
 
-import org.iesfm.discos.exceptions.ArtistNotExistsException;
-import org.iesfm.discos.exceptions.GenreNotExistException;
-import org.iesfm.discos.exceptions.PostCodeNotMembersException;
+import org.iesfm.discos.exceptions.*;
 
 import java.util.*;
 
@@ -48,17 +46,6 @@ public class Store implements IStore{
     }
 
     @Override
-    public boolean existDisk(String title) {
-        boolean diskExists = false;
-        for (Disk disk: disks.values()){
-            if (disk.getTitle().equals(title)){
-                diskExists = true;
-            }
-        }
-        return diskExists;
-    }
-
-    @Override
     public Set<Disk> getArtistDisksByTitle(String artist) throws ArtistNotExistsException{
         Set<Disk> artistDisks = new TreeSet<>();
         for (Disk disk:disks.values()){
@@ -70,6 +57,57 @@ public class Store implements IStore{
             throw new ArtistNotExistsException();
         }
         return artistDisks;
+    }
+
+    @Override
+    public List<Order> getMemberOrders(String nif) throws MemberNotFoundException{
+        Member memberFound = members.get(nif);
+        if (memberFound == null){
+            throw new MemberNotFoundException();
+        }
+        return memberFound.getOrders();
+    }
+
+    @Override
+    public double getMemberTotalSpending(String nif) throws MemberNotFoundException {
+        double totalSpending = 0;
+        List<Order> memberOrders = getMemberOrders(nif);
+        for (Order order: memberOrders){
+            totalSpending += order.getPrice();
+        }
+        return totalSpending;
+    }
+
+    @Override
+    public int getAmountArtistDisks(String artist) throws ArtistNotExistsException {
+        Set<Disk> artistDisks = getArtistDisksByTitle(artist);
+        return artistDisks.size();
+    }
+
+    @Override
+    public boolean existDisk(String title) {
+        boolean diskExists = false;
+        for (Disk disk: disks.values()){
+            if (disk.getTitle().equals(title)){
+                diskExists = true;
+            }
+        }
+        return diskExists;
+    }
+
+    @Override
+    public Map<String, Disk> removeDisk(String title) throws DiskNotExistsException {
+        if (!existDisk(title)){
+            throw new DiskNotExistsException();
+        }
+        disks.remove(title);
+        return disks;
+    }
+
+    @Override
+    public Map<String, Disk> insertDisk(Disk newDisk) {
+        disks.put(newDisk.getTitle(), newDisk);
+        return disks;
     }
 
     public String getName() {
