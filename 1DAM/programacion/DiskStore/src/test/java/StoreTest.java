@@ -181,7 +181,7 @@ public class StoreTest {
         genres3.add("Metal");
         genres3.add("Hard-rock");
 
-        Map<String, Disk> expected = new HashMap();
+        Map<String, Disk> expected = new HashMap<>();
         expected.put("Dulce introduccion al caos", new Disk("Dulce introduccion al caos", "Extremoduro", genres1));
         expected.put("Black ice", new Disk("Black ice", "AC/DC", genres2));
         expected.put("The trooper", new Disk("The trooper", "Iron maiden", genres3));
