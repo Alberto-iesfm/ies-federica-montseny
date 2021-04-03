@@ -2,16 +2,24 @@
 <html>
 <head>
 	<title>Calculator</title>
+	<link rel="stylesheet" type="text/css" href="css/calculator.css">
 	<script type="text/javascript" src="javascript/calculator.js"></script>
 </head>
 <body>
-	<header><h1>CALCULADORA</h1></header>
-		<input type="text" id="num1" value=>
-		<input type="text" id="num2" value=>
-		<input type="button" name="sum" value="+" onclick="sum()">
-		<input type="button" name="subtract" value="-">
-		<input type="button" name="multiply" value="*">
-		<input type="button" name="divide" value="/">
+	<main>
+		<header><h1>CALCULADORA</h1></header>
+		<form id="data">
+			<label for="x">X:</label>
+			<input type="text" id="x" value="">
+			<label for="y">Y:</label>
+			<input type="text" id="y" value="">
+		</form>
+		<br>
+		<input class="button" type="button" name="sum" value="+" onclick="sum()">
+		<input class="button" type="button" name="subtract" value="-" onclick="subtract()">
+		<input class="button" type="button" name="multiply" value="*" onclick="multiply()">
+		<input class="button" type="button" name="divide" value="/" onclick="divide()">
 		<p id="result"></p>
+	</main>
 </body>
 </html>

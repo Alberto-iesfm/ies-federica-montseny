@@ -1,0 +1,37 @@
+body{
+	max-width: 500px;
+	margin: auto;
+}
+
+header{
+	text-align: center;
+	color: purple;
+}
+
+main{
+	padding: 50px;
+	position: absolute;
+	top: 15px;
+	border: solid 1px;
+	border-radius: 15px;
+	background-color: silver;
+}
+
+form{
+	position: relative;
+	left: 10px;
+}
+
+p{
+	max-width: 400px;
+	margin: auto;
+	text-align: center;
+	font-weight: bold;
+}
+
+.button{
+	border-radius: 15px;
+	margin: 25px;
+	height: 60px;
+	width: 60px;
+}
