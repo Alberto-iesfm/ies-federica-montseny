@@ -8,22 +8,22 @@ import java.util.Set;
 
 public interface IStore {
 
-    public Set<Disk> getGenreDisksByTitle(String genre) throws GenreNotExistException;
+    Set<Disk> getGenreDisksByTitle(String genre) throws GenreNotExistException;
 
-    public Map<String, Member> getPostCodeMembers(int postCode) throws PostCodeNotMembersException;
+    Map<String, Member> getPostCodeMembers(int postCode) throws PostCodeNotMembersException;
 
-    public boolean existDisk (String title);
+    boolean existDisk(String title);
 
-    public Set<Disk> getArtistDisksByTitle (String artist) throws ArtistNotExistsException;
+    Set<Disk> getArtistDisksByTitle(String artist) throws ArtistNotExistsException;
 
-    public List<Order> getMemberOrders (String nif) throws MemberNotFoundException;
+    List<Order> getMemberOrders(String nif) throws MemberNotFoundException;
 
-    public double getMemberTotalSpending (String nif) throws MemberNotFoundException;
+    double getMemberTotalSpending(String nif) throws MemberNotFoundException;
 
-    public int getAmountArtistDisks (String artist) throws ArtistNotExistsException;
+    int getAmountArtistDisks(String artist) throws ArtistNotExistsException;
 
-    public Map<String, Disk> removeDisk (String title) throws DiskNotExistsException;
+    Map<String, Disk> removeDisk(String title) throws DiskNotExistsException;
 
-    public Map<String, Disk> insertDisk (Disk newDisk);
+    Map<String, Disk> insertDisk(Disk newDisk);
 
 }
