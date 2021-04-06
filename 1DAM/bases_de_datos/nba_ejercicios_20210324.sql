@@ -113,5 +113,5 @@ WHERE equipo_visitante = "Supersonics" AND temporada = "03/04";
 
 -- 5. Muestra los equipos visitantes que hayan anotado menos de 60 puntos de las temporadas 98/99 y 00/01
 
-SELECT equipo_visitante FROM partidos
+SELECT equipo_visitante, temporada, puntos_visitante FROM partidos
 WHERE puntos_visitante < 60 AND (temporada = "98/99" OR temporada = "00/01");
