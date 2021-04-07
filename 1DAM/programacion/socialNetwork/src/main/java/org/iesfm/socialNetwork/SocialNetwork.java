@@ -10,9 +10,9 @@ import java.util.*;
 public class SocialNetwork implements ISocialNetwork{
     private String name;
     private Map<String, User> users;
-    private List<Post> trendingTopics;
+    private List<String> trendingTopics;
 
-    public SocialNetwork(String name, Map<String, User> users, List<Post> trendingTopics) {
+    public SocialNetwork(String name, Map<String, User> users, List<String> trendingTopics) {
         this.name = name;
         this.users = users;
         this.trendingTopics = trendingTopics;
@@ -74,11 +74,11 @@ public class SocialNetwork implements ISocialNetwork{
         this.users = users;
     }
 
-    public List<Post> getTrendingTopics() {
+    public List<String> getTrendingTopics() {
         return trendingTopics;
     }
 
-    public void setTrendingTopics(List<Post> trendingTopics) {
+    public void setTrendingTopics(List<String> trendingTopics) {
         this.trendingTopics = trendingTopics;
     }
 

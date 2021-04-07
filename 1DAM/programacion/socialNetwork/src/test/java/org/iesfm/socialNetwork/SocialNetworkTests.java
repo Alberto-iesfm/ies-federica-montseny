@@ -44,10 +44,10 @@ public class SocialNetworkTests {
         users.put("usuario2", new User("usuario2", wall2));
         users.put("usuario3", new User("usuario3", wall3));
 
-        List<Post> trendingTopics = new LinkedList<>();
-        trendingTopics.add(new Post("usuario1", "mensaje1", "25-03-2021", tags2));
-        trendingTopics.add(new Post("usuario3", "mensaje2.3", "01-12-2020", tags2));
-        trendingTopics.add(new Post("usuario3", "mensaje3.2", "02-04-2021", tags1));
+        List<String> trendingTopics = new LinkedList<>();
+        trendingTopics.add("mensaje1");
+        trendingTopics.add("mensaje2.3");
+        trendingTopics.add("mensaje3.2");
 
         socialNetwork = new SocialNetwork("testNetwork", users, trendingTopics);
     }
