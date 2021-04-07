@@ -64,7 +64,7 @@ ORDER BY temporada;
 
 -- 5. Muestra la temporada, jugador y suma de las asistencias, tapones y rebotes por partido de los jugadores con más de 15 puntos por partido, de forma ordenada descendente por el campo temporada y ascendente por el campo jugador
 
-SELECT temporada, jugador, Asistencias_por_partido + Tapones_por_partido + Rebotes_por_partido FROM estadisticas
+SELECT temporada, jugador, Asistencias_por_partido + Tapones_por_partido + Rebotes_por_partido AS 'estadisticas' FROM estadisticas
 WHERE Puntos_por_partido > 15
 ORDER BY temporada DESC, jugador;
 
@@ -87,7 +87,7 @@ WHERE Nombre_equipo = 'Bulls' AND Posicion != 'G';
 -- 3. Muestra el nombre, posicion y equipo de los jugadores de procedencia 'Argentina' y 'France' ordenado por los campos procedencia ascendentemente y posicion descendentemente
 
 SELECT Nombre, Posicion, Nombre_equipo FROM jugadores
-WHERE Procedencia = 'Argentina' OR Nombre_equipo = 'France'
+WHERE Procedencia = 'Argentina' OR Procedencia = 'France'
 ORDER BY Procedencia, Posicion DESC;
 
 -- TABLA partidos
@@ -106,4 +106,4 @@ LIMIT 5;
 
 SELECT * FROM partidos
 WHERE equipo_local = 'Rockets' AND (temporada = '04/05' OR temporada = '05/06') AND puntos_local < 100
-ORDER BY equipo_visitante DESC, puntos_visitante DESC;
+ORDER BY equipo_visitante, puntos_visitante DESC;
