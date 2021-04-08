@@ -5,6 +5,14 @@ import org.iesfm.socialNetwork.comparators.WallComparatorByDate;
 import java.util.Objects;
 import java.util.Set;
 
+/**
+ * Clase para definir los posts de la red social. esta compuesta por:
+ *
+ * author: define el username del autor del post (String).
+ * message: define el mensaje del post (String).
+ * date: define la fecha en la que fue escrito el post (String).
+ * tags: define la coleccion de etiquetas del post de forma no ordenada (Set de String).
+ */
 public class Post {
     private String author;
     private String message;

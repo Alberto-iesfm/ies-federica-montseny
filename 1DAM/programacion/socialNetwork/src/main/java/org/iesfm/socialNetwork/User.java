@@ -2,6 +2,14 @@ package org.iesfm.socialNetwork;
 
 import java.util.*;
 
+/**
+ * Clase para definir los usuarios de la red social. Esta compuesta por:
+ *
+ * userName: define el nombre del usuario en la red social (String).
+ * wall: define el muro de posts del usuario (Set de Post, ordenados por su fecha (de mas reciente a menos reciente)).
+ *
+ * Metodos: getAuthorPostInWall.
+ */
 public class User {
     private String userName;
     private Set<Post> wall;
@@ -11,6 +19,11 @@ public class User {
         this.wall = wall;
     }
 
+    /**
+     * permite obtener los posts de un determinado autor en el muro del usuario.
+     * @param userName: nombre del usuario del que se desean buscar los post de los que es el autor (String).
+     * @return authorPosts: lista de post de los que el userName es autor (List de Post).
+     */
     public List<Post> getAuthorPostInWall(String userName) {
         List<Post> authorPosts = new LinkedList<>();
         for (Post post:wall){

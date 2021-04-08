@@ -7,6 +7,15 @@ import org.iesfm.socialNetwork.exceptions.UserNotFoundException;
 
 import java.util.*;
 
+/**
+ * Clase para definir la red social. Esta compuesta por:
+ *
+ * name: define el nombre de la red social (String).
+ * users: define la coleccion de usuarios de la red social (Map de User indexados por su userName (String)).
+ * trendingTopics: define la lista de tendencias de la red social (List de String)
+ *
+ * Metodos: implementa los metodos de la interface ISocialNetwork.
+ */
 public class SocialNetwork implements ISocialNetwork{
     private String name;
     private Map<String, User> users;
