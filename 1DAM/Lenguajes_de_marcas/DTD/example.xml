@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE company SYSTEM "dtd.dtd">
+
+<company>
+    <nombreCompañia>compañia 1</nombreCompañia>
+    <empleados>
+        <empleado>
+            <nombre>Juan</nombre>
+            <apellidos>Perez Diaz</apellidos>
+        </empleado>
+        <empleado>
+            <nombre>Pedro</nombre>
+            <apellidos>Hierro Fernandez</apellidos>
+        </empleado>
+    </empleados>
+</company>

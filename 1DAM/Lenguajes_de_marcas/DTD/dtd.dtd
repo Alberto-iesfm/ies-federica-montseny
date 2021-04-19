@@ -1,0 +1,6 @@
+<!ELEMENT company (nombreCompañia,empleados)>
+<!ELEMENT nombreCompañia (#PCDATA)>
+<!ELEMENT empleados (empleado*)>
+<!ELEMENT empleado (nombre,apellidos)>
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apellidos (#PCDATA)>
