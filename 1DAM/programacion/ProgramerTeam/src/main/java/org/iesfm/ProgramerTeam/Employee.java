@@ -17,7 +17,14 @@ public abstract class Employee {
         workedHours += hours;
     }
 
-    protected abstract void infoEmployee();
+    protected final void showPersonalData(){
+        System.out.println("Datos personales:");
+        System.out.println("ID: " + idEmployee);
+        System.out.println("Nombre y apellidos: " + name);
+        System.out.println("Horas trabajadas: " + workedHours);
+    }
+
+    public abstract void infoEmployee();
 
     public int getIdEmployee() {
         return idEmployee;

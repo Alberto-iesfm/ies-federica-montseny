@@ -11,9 +11,23 @@ public final class ScrumMaster extends Employee{
         this.teams = teams;
     }
 
-    @Override
-    public void infoEmployee() {
+    private void showTeams(){
+        for (String team:teams){
+            System.out.println("- " + team);
+        }
+    }
 
+    @Override
+    public final void infoEmployee() {
+        showPersonalData();
+        System.out.println();
+        System.out.println("Rol: Scrum master");
+        System.out.println("Equipos:");
+        showTeams();
+    }
+
+    public final void joinTeam(String newTeam){
+        teams.add(newTeam);
     }
 
     public Set<String> getTeams() {

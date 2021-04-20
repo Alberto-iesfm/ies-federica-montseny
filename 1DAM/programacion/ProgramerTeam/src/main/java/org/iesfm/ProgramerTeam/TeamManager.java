@@ -13,9 +13,20 @@ public final class TeamManager extends Employee{
         this.projects = projects;
     }
 
+    private void showProjects(){
+        for (String project:projects){
+            System.out.println("- " + project);
+        }
+    }
+
     @Override
     public void infoEmployee() {
-
+        showPersonalData();
+        System.out.println();
+        System.out.println("Rol: Team manager");
+        System.out.println("Equipo: " + team);
+        System.out.println("Proyectos:");
+        showProjects();
     }
 
     public String getTeam() {

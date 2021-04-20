@@ -13,9 +13,20 @@ public final class Programer extends Employee{
         this.team = team;
     }
 
-    @Override
-    public void infoEmployee() {
+    private void showLanguages(){
+        for (String language:languages){
+            System.out.println("- " + language);
+        }
+    }
 
+    @Override
+    public final void infoEmployee() {
+        showPersonalData();
+        System.out.println();
+        System.out.println("Rol: Programador");
+        System.out.println("Lenguajes usados:");
+        showLanguages();
+        System.out.println("Equipo: " + team);
     }
 
     public List<String> getLanguages() {

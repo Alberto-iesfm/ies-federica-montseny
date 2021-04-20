@@ -1,0 +1,55 @@
+{
+	"company":{
+		"name":"company 1",
+		"departments":[
+			{
+				"name":"name 1",
+				"director":"director 1",
+				"employees":[
+					{
+						"number":1,
+						"name":"name 1.1",
+						"surnames":"surname 1",
+						"role":"role 1"
+					},
+					{
+						"number":2,
+						"name":"name 1.2",
+						"surnames":"surname 2",
+						"role":"role 2"
+					}
+				]
+			},
+			{
+				"name":"name 2",
+				"director":"director 2",
+				"employees":[
+					{
+						"number":3,
+						"name":"name 2.1",
+						"surnames":"surname 3",
+						"role":"role 5"
+					},
+					{
+						"number":4,
+						"name":"name 2.2",
+						"surnames":"surname 4",
+						"role":"role 7"
+					}
+				]
+			}
+		],
+		"headquarters":[
+			{
+				"name":"name 1",
+				"adress":"adress 1",
+				"postCode":00000
+			},
+			{
+				"name":"name 2",
+				"adress":"adress 2",
+				"postCode":11111
+			},
+		]
+	}
+}
