@@ -1,31 +1,66 @@
 USE jardineria;
 
 -- 1. Muestra el listado de descripciones de texto de la tabla gamasproductos 
--- usando la función CONVERT(DescripcionTexto USING utf8)
+-- usando la función CONVERT(DescripcionTexto USING utf8).
+
+SELECT CONVERT(DescripcionTexto USING utf8) AS "Descripcion"
+FROM gamasproductos;
 
 -- 2. Muestra el número de clientes norteamericanos.
+
+SELECT COUNT(*)
+FROM clientes
+WHERE Pais = 'USA';
 
 -- 3. seleccionar la concatenación del nombres, apellido 1 y apellido 2 de los empleados, 
 -- y la dirección1 de su oficina.
 
+SELECT CONCAT(emp.Nombre, ' ', emp.Apellido1, ' ', emp.Apellido2) AS 'Nombre y apellidos', ofi.LineaDireccion1
+FROM empleados emp
+INNER JOIN oficinas ofi ON emp.CodigoOficina = ofi.CodigoOficina;
 
 -- 4. Mostrar el apellido de los empleados y la ciudad de su oficina. 
 -- Si algún empleado no tuviera una oficina asignada no saldría
 
+SELECT CONCAT(emp.Apellido1, ' ', emp.Apellido2) AS 'Apellidos', ofi.Ciudad
+FROM empleados emp
+INNER JOIN oficinas ofi ON emp.CodigoOficina = ofi.CodigoOficina;
 
 -- 5. Mostrar el apellido de los empleados y la ciudad de su oficina. 
 -- También deben salir los empleados que no tienen una oficina asignada
 
+SELECT CONCAT(emp.Apellido1, ' ', emp.Apellido2) AS 'Apellidos', ofi.Ciudad
+FROM empleados emp
+LEFT JOIN oficinas ofi ON emp.CodigoOficina = ofi.CodigoOficina;
 
 -- 6. Muestra el nombre de los cliente y el nombre de su empleado asociado (si lo tiene).
 
--- 7. Nombre de los clientes que hayan hecho un pago en 2007
+SELECT cli.NombreCliente AS 'Nombre Cliente', CONCAT(emp.Nombre, ' ', emp.Apellido1, ' ', emp.Apellido2) AS 'Nombre Empleado'
+FROM clientes cli
+INNER JOIN empleados emp ON cli.CodigoEmpleadoRepVentas = emp.CodigoEmpleado;
 
--- 8. Muestra el número de pedido, el nombre del cliente, la fecha de entrega y la fecha requerida 
+-- 7. Nombre de los clientes que hayan hecho un pago en 2007.
+
+SELECT cli.NombreCliente AS 'Nombre Cliente'
+FROM clientes cli
+INNER JOIN pagos pag ON cli.CodigoCliente = pag.CodigoCliente
+WHERE pag.FechaPago LIKE '2007-%';
+
+
+-- 8. Muestra el número de pedido, el nombre del cliente, la fecha de entrega y la fecha esperada
 -- de los pedidos que no han sido entregados a tiempo.
 
+SELECT ped.CodigoPedido, cli.NombreCliente, ped.FechaEntrega, ped.FechaEsperada
+FROM pedidos ped
+INNER JOIN clientes cli ON ped.CodigoCliente = cli.CodigoCliente
+WHERE ped.FechaEntrega > ped.FechaEsperada;
 
 -- 9. Muestra el nombre y apellidos de los empleados (concatenados) que trabajan en Barcelona.
+
+SELECT CONCAT(emp.Nombre, ' ', emp.Apellido1, ' ', emp.Apellido2) AS 'Nombre y Apellidos'
+FROM empleados emp
+INNER JOIN oficinas ofi ON emp.CodigoOficina = ofi.CodigoOficina
+WHERE ofi.Ciudad = 'Barcelona';
 
 -- 10. Seleccionar de todos los pedidos, el Nombre del empleado que ha realizado el pedido, 
 -- el nombre del cliente al que se le ha vendido y el código de pedido
