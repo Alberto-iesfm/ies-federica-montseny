@@ -26,16 +26,15 @@ ORDER BY jug.Nombre DESC;
 -- 4. Mostrar la suma y la media de los puntos por partido de todos los jugadores por equipo, de las temporadas
 -- 01/02 hasta 06/07
 
-SELECT eq.Nombre, SUM(est.Puntos_por_partido) AS 'suma puntos', AVG(est.Puntos_por_partido) AS 'media puntos'
+SELECT jug.Nombre_equipo, SUM(est.Puntos_por_partido) AS 'suma puntos', AVG(est.Puntos_por_partido) AS 'media puntos'
 FROM estadisticas est
 	INNER JOIN jugadores jug ON est.jugador = jug.codigo
-    INNER JOIN equipos eq ON jug.Nombre_equipo = eq.Nombre
 WHERE est.temporada BETWEEN '01/02' AND '06/07'
 GROUP BY jug.Nombre_equipo;
 
 -- 5. Mostrar el número de equipos de la conferencia East
 
-SELECT COUNT(*) AS 'numero equipos'
+SELECT Conferencia, COUNT(*) AS 'numero equipos'
 FROM equipos
 WHERE Conferencia = "East";
 
