@@ -1,0 +1,35 @@
+{
+	"institute":{
+		"name":"Federica Montseny",
+		"titles":[
+			{
+				"name":"title 1",
+				"hours":220
+			},
+			{
+				"name":"title 2",
+				"hours":400
+			}
+		],
+		"students":[
+			{
+				"name":"name 1",
+				"surnames":"surnames 1",
+				"course":"1º title 1",
+				"birthday":"24/10/1999"
+			},
+			{
+				"name":"name 2",
+				"surnames":"surnames 2",
+				"course":"1º title 2",
+				"birthday":"15/8/1995"
+			},
+			{
+				"name":"name 3",
+				"surnames":"surnames 3",
+				"course":"2º title 1",
+				"birthday":"07/04/2000"
+			}
+		]
+	}
+}
