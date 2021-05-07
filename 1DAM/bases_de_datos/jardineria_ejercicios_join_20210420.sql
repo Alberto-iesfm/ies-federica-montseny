@@ -98,7 +98,7 @@ GROUP BY pro.Nombre;
 SELECT pro.CodigoProducto, pro.Nombre
 FROM productos pro
 LEFT JOIN detallepedidos deta ON pro.CodigoProducto = deta.CodigoProducto
-WHERE deta.CodigoPedido IS NULL;
+WHERE deta.CodigoProducto IS NULL;
 
 
 -- 15. Devuelve el código, nombre, y la descripción del texto de la gama de los productos que no han aparecido 
@@ -108,4 +108,4 @@ SELECT pro.CodigoProducto, pro.Nombre, CONVERT(gama.DescripcionTexto USING utf8)
 FROM productos pro
 LEFT JOIN detallepedidos deta ON pro.CodigoProducto = deta.CodigoProducto
 INNER JOIN gamasproductos gama ON pro.Gama = gama.Gama
-WHERE deta.CodigoPedido IS NULL;
+WHERE deta.CodigoProducto IS NULL;
