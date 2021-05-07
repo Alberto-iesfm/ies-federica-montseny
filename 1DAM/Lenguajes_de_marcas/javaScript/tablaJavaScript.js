@@ -7,10 +7,10 @@ function add(){
 
 	var column2 = document.createElement ("td");
 	var number = document.createTextNode(document.getElementById("Number").value);
-	column1.appendChild(number);
+	column2.appendChild(number);
 
 	row.appendChild(column1);
 	row.appendChild(column2);
 
-	document.getElementById("tabla").innerHTML=row;
+	document.getElementById("tabla").appendChild(row);
 }
