@@ -2,7 +2,9 @@ package org.iesfm.XMLSerializer.serializer;
 
 import org.iesfm.XMLSerializer.Address;
 
-public class AddressSerializer implements XMLSerializer<Address> {
+import java.util.Set;
+
+public class AddressSerializer implements XMLSerializer<Address>{
     @Override
     public String toXml(Address address) {
         String street = "<street>" + address.getStreet() + "</street>";
