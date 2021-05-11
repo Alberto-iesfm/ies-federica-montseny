@@ -81,5 +81,6 @@ FROM (
 	SELECT pro.Gama, SUM(det.Cantidad) AS "Ventas"
     FROM productos pro
     INNER JOIN detallepedidos det ON pro.CodigoProducto = det.CodigoProducto
-    GROUP BY pro.Gama) pro_det;
+    GROUP BY pro.Gama
+    ) pro_det;
     
